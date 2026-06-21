@@ -151,7 +151,9 @@
             .subtitle { text-align: center; }
             
             /* Pour les tableaux responsives, on les fait scroller horizontalement */
-            .table-container {
+            .tableau-wrapper {
+                align-items: flex-start; /* Important pour éviter que le côté gauche soit coupé */
+                width: 100%;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
                 margin-bottom: 2rem;

@@ -18,8 +18,6 @@
             font-family: 'Inter', sans-serif;
             color: var(--primary);
             padding: 3rem;
-            display: flex;
-            justify-content: center;
             /* Animation d'apparition douce */
             animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             transform-origin: center bottom;
@@ -33,6 +31,7 @@
         .cv-container {
             width: 100%;
             max-width: 1000px;
+            margin: 0 auto; /* Remplace flex center */
             background: var(--cv-bg);
             backdrop-filter: blur(20px);
             border-radius: 20px;
