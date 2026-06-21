@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau ENEAM et Vol 377</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 4rem 2rem;
+            gap: 5rem;
+            animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center bottom;
+        }
+
+        @keyframes smoothScaleFade {
+            0%   { opacity: 0; transform: scale(0.9) translateY(40px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .tableau-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .tableau-titre {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* =====================
+           TABLE 1: ENEAM 
+        ===================== */
+        .table-eneam {
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(15px);
+            border: 8px double #f5c518; /* Bordures extérieures doubles épaisses JAUNES */
+        }
+
+        .table-eneam td {
+            border: 2px solid #1a56db; /* Bordures intérieures fines BLEUES */
+            text-align: center;
+            vertical-align: middle;
+            padding: 0;
+        }
+
+        .cell-eneam {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a56db;
+            letter-spacing: 5px;
+            padding: 1.2rem 2rem !important;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .cell-epac {
+            background: rgba(255, 255, 255, 0.8);
+            width: 55px;
+        }
+        .cell-epac span {
+            display: block;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #1e293b;
+            padding: 1rem 0.5rem;
+        }
+
+        .cell-flash {
+            background: rgba(255, 255, 255, 0.8);
+            width: 55px;
+        }
+        .cell-flash span {
+            display: inline-block;
+            transform: rotate(-55deg); 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #1e293b;
+            white-space: nowrap;
+        }
+
+        .cell-ig {
+            background: rgba(147, 210, 235, 0.55);
+            width: 180px;
+            height: 200px;
+        }
+        .cell-ig span {
+            display: inline-block;
+            transform: rotate(-30deg);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+
+        .cell-ia {
+            background: rgba(255, 255, 255, 0.8);
+            width: 130px;
+            height: 100px;
+        }
+        .cell-ia span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e293b;
+            animation: clignoter 1.1s step-start infinite;
+        }
+        @keyframes clignoter {
+            0%   { opacity: 1; }
+            50%  { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .cell-claude {
+            background: rgba(255, 255, 255, 0.8);
+            width: 130px;
+            height: 100px;
+        }
+        .cell-claude span {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .cell-prog {
+            background: rgba(219, 234, 254, 0.3);
+            height: 80px;
+        }
+        .cell-prog span {
+            display: inline-block;
+            transform: rotate(-10deg);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: 2px;
+        }
+
+        /* =====================
+           TABLE 2: VOL 377
+        ===================== */
+        .table-vol {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            background: #ffffff;
+            border: 2px solid #1d4ed8; /* Bordure bleue forte */
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .table-vol caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding-bottom: 0.5rem;
+            color: #1d4ed8;
+        }
+
+        .table-vol thead {
+            background-color: #2563eb; /* Bleu intense */
+            color: white;
+        }
+
+        .table-vol th, .table-vol td {
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid #1d4ed8; /* Bordures classiques bleues bien visibles */
+        }
+
+        .table-vol tfoot {
+            background-color: #eff6ff; /* Bleu très clair */
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Premier Tableau (ENEAM) -->
+    <div class="tableau-wrapper">
+        <div class="tableau-titre">Travaux sur les tableaux HTML</div>
+        <table class="table-eneam">
+            <tr>
+                <td rowspan="2" class="cell-epac"><span>EPAC</span></td>
+                <td colspan="2" class="cell-eneam">ENEAM</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="cell-ig"><span>IG</span></td>
+                <td class="cell-ia"><span>IA</span></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="cell-flash"><span>Flash</span></td>
+                <td class="cell-claude"><span>claude</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="cell-prog"><span>Programmation</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Deuxième Tableau (Vol 377) -->
+    <div class="tableau-wrapper">
+        <table class="table-vol">
+            <caption>Passagers du vol 377</caption>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Pays</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>François</td>
+                    <td>43 ans</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Carmen</td>
+                    <td>33 ans</td>
+                    <td>Espagne</td>
+                </tr>
+                <tr>
+                    <td>Michelle</td>
+                    <td>26 ans</td>
+                    <td>Etats-Unis</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Pays</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+</html>

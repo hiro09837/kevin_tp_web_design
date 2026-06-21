@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TP1 - Introduction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            padding: 3rem;
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            /* Animation purement CSS façon apparition macOS/iPhone */
+            animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center bottom;
+        }
+
+        @keyframes smoothScaleFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+        }
+
+        .emoji-big {
+            font-size: 3rem;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        .punchline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>HELLO! Bienvenue sur mon site web 😊</h1>
+        
+        <p>Alors, pourquoi ce "site" 🤷‍♀️🤷‍♂️ ?<br />
+        Tout simplement comme ça ! <span class="emoji-big">😁😜😎😉</span></p>
+        
+        <p>Non non je plaisantais. Bon voilà :</p>
+        
+        <p>Je m'appelle <strong>Kevin</strong>, et ce que vous lisez actuellement est le produit d'un code HTML stylisé. Ce premier TP vise simplement à montrer un extrait de code web et à poser les bases.</p>
+        
+        <div class="punchline">
+            EN GROS, C'EST UN ESSAI ! 😂😁😂😂😂😂
+        </div>
+    </div>
+</body>
+</html>
