@@ -14,6 +14,7 @@
             justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
+            width: 100%;
             margin: 0;
             padding: 4rem 2rem;
             gap: 5rem;
@@ -145,24 +146,41 @@
 
         /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 900px) {
-            body { padding: 1rem; }
-            .container { padding: 1.5rem 1rem; }
-            .title { font-size: 2rem; text-align: center; }
-            .subtitle { text-align: center; }
-            
-            /* Pour les tableaux responsives, on les fait scroller horizontalement */
+            body {
+                padding: 1.5rem 0.5rem;
+                gap: 3rem;
+                align-items: flex-start;
+            }
+
             .tableau-wrapper {
-                align-items: flex-start; /* Important pour éviter que le côté gauche soit coupé */
                 width: 100%;
+                max-width: 100vw;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-                margin-bottom: 2rem;
-                border-radius: 12px;
-                box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+                align-items: flex-start;
             }
-            
-            table {
-                min-width: 600px; /* Force le tableau à garder sa forme et scroller */
+
+            .tableau-titre {
+                font-size: 1.1rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            /* Tableau ENEAM : réduire les tailles fixes des cellules */
+            .cell-epac, .cell-flash { width: 40px; }
+            .cell-epac span { font-size: 0.9rem; }
+            .cell-flash span { font-size: 0.9rem; }
+            .cell-ig { width: 120px; height: 140px; }
+            .cell-ig span { font-size: 2rem; }
+            .cell-ia, .cell-claude { width: 90px; height: 80px; }
+            .cell-ia span { font-size: 1.4rem; }
+            .cell-eneam { font-size: 1.5rem; padding: 0.8rem 1rem !important; }
+            .cell-prog span { font-size: 1.1rem; }
+
+            /* Tableau Vol 377 : pleine largeur */
+            .table-vol {
+                width: 100%;
+                max-width: 100%;
             }
         }
 

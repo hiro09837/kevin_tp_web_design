@@ -175,18 +175,19 @@
                 gap: 10px;
                 align-items: center;
             }
-            .logo-link:last-child {
-                grid-column: 1;
-                grid-row: 1; /* Logo ENEAM en haut à gauche */
-            }
+            /* UAC à gauche, ENEAM à droite */
             .logo-link:first-child {
+                grid-column: 1;
+                grid-row: 1; /* Logo UAC en haut à gauche */
+            }
+            .logo-link:last-child {
                 grid-column: 3;
-                grid-row: 1; /* Logo UAC en haut à droite */
+                grid-row: 1; /* Logo ENEAM en haut à droite */
             }
             .hamburger-icon {
                 display: block;
                 grid-column: 1;
-                grid-row: 2; /* Sous le logo ENEAM */
+                grid-row: 2; /* Sous le logo UAC */
                 justify-self: start;
                 padding: 0;
             }
@@ -198,32 +199,41 @@
                 margin-top: 0.5rem;
             }
             .logo-img { height: 50px; }
-            
+
             .main-wrapper {
-                flex-direction: row; /* Garder flex row pour la sidebar en absolute */
+                flex-direction: row;
                 position: relative;
-                overflow: hidden; /* Cacher la sidebar qui dépasse */
+                overflow: visible; /* Laisser l'iframe scroller */
+                flex: 1;
+            }
+            .content-area {
+                flex: 1;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                height: 100%;
+            }
+            iframe {
+                height: 100%;
+                min-height: 100%;
             }
             .sidebar {
-                display: flex; /* Toujours flex pour le menu */
+                display: flex;
                 flex-direction: column;
-                width: 60%; /* Occupe 60% de l'espace (la moitié) */
+                width: 65%;
                 height: 100%;
                 padding: 1rem 0;
                 border-right: 2px solid var(--accent-color);
                 border-bottom: none;
                 position: absolute;
                 top: 0;
-                left: -65%; /* Hors de l'écran par défaut */
+                left: -70%;
                 background: rgba(255, 255, 255, 0.98);
                 z-index: 20;
-                box-shadow: 5px 0 15px rgba(0,0,0,0.2);
-                transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation de glissade en douceur */
+                box-shadow: 5px 0 20px rgba(0,0,0,0.2);
+                transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             }
             .menu-title { display: none; }
-            .menu-nav {
-                flex-direction: column;
-            }
+            .menu-nav { flex-direction: column; }
             .menu-item {
                 padding: 1rem 1.5rem;
                 border-left: none;
@@ -238,8 +248,7 @@
                 background: rgba(37, 99, 235, 0.1);
                 border-bottom-color: rgba(0,0,0,0.05);
             }
-
-            /* Affichage du menu hamburger par glissade */
+            /* Affichage du menu par glissade */
             #mobile-menu-toggle:checked ~ .main-wrapper .sidebar {
                 left: 0;
             }
