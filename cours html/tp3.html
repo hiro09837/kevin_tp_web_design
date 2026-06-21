@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Professionnel</title>
+    <!-- Importation des polices Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --text-primary: #1e293b;
+            --text-secondary: #334155;
+            --accent-color: #2563eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* On met un fond transparent pour que le dégradé de index.html soit visible au travers */
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 2rem; /* Petit padding pour que ça respire dans l'iframe */
+            
+            /* Animation purement CSS façon apparition macOS/iPhone */
+            animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center bottom;
+        }
+
+        @keyframes smoothScaleFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .header-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+        }
+
+        /* --- Contenu principal (Pleine page) --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 3px;
+            width: 40px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* --- I. Informations personnelles --- */
+        .info-layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .info-details {
+            font-size: 1.15rem;
+        }
+
+        .info-details p {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 180px;
+            color: var(--text-secondary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .info-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+        }
+
+        /* --- II. Mes diplômes --- */
+        .diplomas {
+            list-style: none;
+            font-size: 1.25rem;
+        }
+
+        .diplomas li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .diplomas li:last-child {
+            border-bottom: none;
+        }
+
+        .diploma-bullet {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* --- III. Mes loisirs --- */
+        .loisirs-text {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 1100px;
+            text-align: justify;
+            line-height: 2;
+        }
+
+        .loisirs-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .loisirs-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Responsive Design pour mobile */
+        @media (max-width: 900px) {
+            .info-layout {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .info-details p {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            .info-label {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Rajouté pour la présentation standalone) -->
+    <header class="header">
+        <a href="https://uac.bj/" target="_blank" title="Visiter le site de l'UAC">
+            <img src="logo_uac_t.png" alt="Logo UAC" class="logo-img" onerror="this.style.display='none'" />
+        </a>
+        <h1 class="header-title">Bienvenue dans mon site web</h1>
+        <a href="https://eneam.uac.bj/" target="_blank" title="Visiter le site de l'ENEAM">
+            <img src="logo_eneam_t.png" alt="Logo ENEAM" class="logo-img" onerror="this.style.display='none'" />
+        </a>
+    </header>
+
+    <main class="container">
+        
+        <!-- I. Informations personnelles -->
+        <section class="section">
+            <h2 class="section-title">I. Informations personnelles</h2>
+            <div class="info-layout">
+                <div class="info-details">
+                    <p><span class="info-label">Nom :</span> ABIALA</p>
+                    <p><span class="info-label">Prénom :</span> Kevin</p>
+                    <p><span class="info-label">Numéro de téléphone :</span> 01 50 40 40 64</p>
+                    <p><span class="info-label">Adresse email :</span> abialakevin07@gmail.com</p>
+                </div>
+                
+                <div class="info-photo">
+                    <img src="kevin.jpg" alt="Ma photo" class="profile-pic" />
+                </div>
+                
+                <div></div>
+            </div>
+        </section>
+
+        <!-- II. Mes diplômes -->
+        <section class="section">
+            <h2 class="section-title">II. Mes diplômes</h2>
+            <ul class="diplomas">
+                <li><span class="diploma-bullet">•</span> CEP</li>
+                <li><span class="diploma-bullet">•</span> BEPC</li>
+                <li><span class="diploma-bullet">•</span> BAC D</li>
+            </ul>
+        </section>
+
+        <!-- III. Mes loisirs -->
+        <section class="section">
+            <h2 class="section-title">III. Mes loisirs</h2>
+            <div class="loisirs-text">
+                <p>
+                    Bien que je ne sois pas un grand passionné de la lecture au sens strict du terme, je suis profondément captivé par le pouvoir des mots et l'imaginaire. J'adore les idées, les concepts et les histoires que véhiculent les livres, tout particulièrement les romans. Découvrir de nouvelles intrigues nourrit ma créativité et m'aide souvent à concevoir mes projets sous des angles différents.
+                </p>
+                <p>
+                    Sur le plan sportif, le <strong>basketball</strong> occupe une place centrale dans mon quotidien. C'est mon sport de prédilection, celui qui m'a appris l'esprit d'équipe, la discipline et le dépassement de soi, des valeurs que j'applique dans tous les aspects de ma vie.
+                </p>
+                <p>
+                    En ce qui concerne mon parcours académique et professionnel, je suis étudiant en <strong>Informatique de Gestion</strong>. Mon domaine principal est donc ancré dans le code, la structuration des systèmes d'information et la gestion des données. Cependant, j'ai aussi un "petit côté" très prononcé pour <strong>l'audiovisuel et le digital</strong>. Ce mélange inattendu me permet d'aborder la technologie avec un regard à la fois très technique et profondément créatif. J'aime cette idée de pouvoir développer une application de gestion robuste tout en étant capable de réaliser le montage vidéo de sa campagne ou de penser à son design digital. C'est cette dualité unique qui me fascine et dans laquelle je m'investis pleinement.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

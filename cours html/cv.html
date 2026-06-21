@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae - Kevin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --cv-bg: rgba(255, 255, 255, 0.85);
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --text-light: #64748b;
+        }
+
+        body {
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            color: var(--primary);
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            /* Animation d'apparition douce */
+            animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center bottom;
+        }
+
+        @keyframes smoothScaleFade {
+            0% { opacity: 0; transform: scale(0.9) translateY(40px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .cv-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--cv-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: flex;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        /* Colonne de gauche (Profil) */
+        .left-col {
+            width: 35%;
+            background: rgba(37, 99, 235, 0.05);
+            padding: 3rem 2rem;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cv-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+            margin-bottom: 2rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .cv-photo:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 20px 45px rgba(37, 99, 235, 0.4);
+            border-color: #f5c518;
+        }
+
+        .contact-info {
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        /* Colonne de droite (Détails) */
+        .right-col {
+            width: 65%;
+            padding: 4rem 3rem;
+        }
+
+        .name-header {
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .name-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .name-header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--accent);
+        }
+
+        .item-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--primary);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .cv-container { flex-direction: column; }
+            .left-col, .right-col { width: 100%; }
+            .right-col { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Colonne de gauche -->
+        <div class="left-col">
+            <img src="kevin.jpg" alt="Photo de Kevin" class="cv-photo" />
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-title">Profil</div>
+                    <div class="contact-text">Étudiant passionné par la technologie, alliant une solide formation technique en gestion de données à un esprit très créatif orienté vers le digital.</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-title">Téléphone</div>
+                    <div class="contact-text">01 50 40 40 64</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-title">Email</div>
+                    <div class="contact-text">abialakevin07@gmail.com</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-title">Loisirs</div>
+                    <div class="contact-text">Basketball (Sport favori)<br />Lecture (Romans, Philosophie)<br />Musique</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colonne de droite -->
+        <div class="right-col">
+            <div class="name-header">
+                <h1>Kevin ABIALA</h1>
+                <h2>Étudiant en Informatique de Gestion</h2>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Formation Académique</div>
+                
+                <div class="item">
+                    <div class="item-title">Université d'Abomey-Calavi (ENEAM)</div>
+                    <div class="item-subtitle">Licence en Informatique de Gestion • [Année en cours]</div>
+                    <div class="item-desc">Formation axée sur la programmation, la conception de systèmes d'information, et la gestion des bases de données d'entreprise.</div>
+                </div>
+
+                <div class="item">
+                    <div class="item-title">Diplôme du Baccalauréat (BAC D)</div>
+                    <div class="item-subtitle">Série Scientifique / Gestion • [Année]</div>
+                </div>
+                
+                <div class="item">
+                    <div class="item-title">BEPC & CEP</div>
+                    <div class="item-subtitle">Diplômes de base obtenus avec succès.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Domaines d'Expertise</div>
+                <div class="skills-container">
+                    <span class="skill-tag">Développement Web (HTML/CSS)</span>
+                    <span class="skill-tag">Gestion de Bases de Données</span>
+                    <span class="skill-tag">Production Audiovisuelle</span>
+                    <span class="skill-tag">Stratégie Digitale</span>
+                    <span class="skill-tag">No-Code</span>
+                    <span class="skill-tag">Esprit d'équipe (Basketball)</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Objectif Professionnel</div>
+                <div class="item">
+                    <div class="item-desc">Mettre à profit ma double compétence technique (Informatique de gestion) et créative (Audiovisuel/Digital) pour concevoir des solutions technologiques innovantes, esthétiques et parfaitement adaptées aux besoins des entreprises modernes.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

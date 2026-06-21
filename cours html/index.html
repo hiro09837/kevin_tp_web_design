@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Tableau de Bord - Kevin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --gradient-bg: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            --text-primary: #1e293b;
+            --accent-color: #2563eb;
+            --glass-bg: rgba(255, 255, 255, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gradient-bg);
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            height: 120px; /* En-tête plus grand pour les logos */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .header-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .logo-link {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05); /* Petit effet au survol du logo */
+        }
+
+        .logo-img {
+            height: 85px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); /* Ajoute une ombre légère aux logos maintenant qu'ils sont transparents */
+        }
+
+        /* --- MAIN LAYOUT --- */
+        .main-wrapper {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            width: 260px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 0;
+            z-index: 5;
+            overflow-y: auto; /* Permet le défilement si le menu est trop long */
+        }
+
+        .menu-title {
+            padding: 0 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item {
+            padding: 1rem 2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+        }
+
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 2rem; right: 2rem;
+            height: 1px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .menu-item:hover, .menu-item:focus {
+            background: rgba(255, 255, 255, 0.7);
+            border-left-color: var(--accent-color);
+            color: var(--accent-color);
+            padding-left: 2.5rem;
+        }
+
+        /* --- CONTENT AREA --- */
+        .content-area {
+            flex: 1;
+            position: relative;
+            background: transparent;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            height: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: #475569;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <!-- Liens vers les sites officiels -->
+        <a href="https://uac.bj/" target="_blank" class="logo-link" title="Visiter le site de l'UAC">
+            <img src="logo_uac_t.png" alt="Logo UAC" class="logo-img" onerror="this.style.display='none'" />
+        </a>
+        
+        <h1 class="header-title">Bienvenue dans mon site web</h1>
+        
+        <a href="https://eneam.uac.bj/" target="_blank" class="logo-link" title="Visiter le site de l'ENEAM">
+            <img src="logo_eneam_t.png" alt="Logo ENEAM" class="logo-img" onerror="this.style.display='none'" />
+        </a>
+    </header>
+
+    <div class="main-wrapper">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="menu-title">Menu</div>
+            <nav class="menu-nav">
+                <a href="page1.html" class="menu-item" target="main-frame">Page 1</a>
+                <a href="tp1.html" class="menu-item" target="main-frame">TP 1</a>
+                <a href="tp2.html" class="menu-item" target="main-frame">TP 2</a>
+                <a href="tp3.html" class="menu-item" target="main-frame">TP 3</a>
+                <a href="liste.html" class="menu-item" target="main-frame">Liste</a>
+                <a href="tableau.html" class="menu-item" target="main-frame">Tableau</a>
+                <a href="formulaire.html" class="menu-item" target="main-frame">Formulaire</a>
+                <a href="cv.html" class="menu-item" target="main-frame">CV</a>
+            </nav>
+        </aside>
+
+        <!-- CONTENT AREA -->
+        <main class="content-area">
+            <iframe src="page1.html" name="main-frame" id="main-iframe" title="Contenu Principal"></iframe>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 Kevin - Tous droits réservés.
+    </footer>
+
+</body>
+</html>

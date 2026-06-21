@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 1 - Accueil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background: transparent;
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center bottom;
+        }
+
+        @keyframes smoothScaleFade {
+            0% { opacity: 0; transform: scale(0.9) translateY(40px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 3.5rem;
+            border: 1px solid rgba(255,255,255,0.8);
+            text-align: center;
+        }
+
+        .presentation {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .presentation h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1e293b;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .presentation p {
+            font-size: 1.15rem;
+            color: #475569;
+            line-height: 1.7;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        /* Section Hommage */
+        .hommage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hommage-titre {
+            font-family: 'Montserrat', sans-serif;
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .prof-photo {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #2563eb;
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+            margin-bottom: 2.5rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .prof-photo:hover {
+            transform: scale(1.08) rotate(3deg);
+            border-color: #f5c518;
+        }
+
+        .hommage-texte {
+            font-size: 1.15rem;
+            color: #1e293b;
+            line-height: 1.8;
+            max-width: 800px;
+            text-align: justify;
+            margin-bottom: 2.5rem;
+            background: rgba(37, 99, 235, 0.04);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 6px solid #2563eb;
+            position: relative;
+        }
+
+        .hommage-texte::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .hommage-texte strong {
+            color: #2563eb;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Réseaux sociaux */
+        .social-title {
+            font-size: 1rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: #f8fafc;
+            color: #2563eb;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .social-link:hover {
+            background: #2563eb;
+            color: #ffffff;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .social-link svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Présentation de Kevin -->
+        <div class="presentation">
+            <h2>Kevin ABIALA</h2>
+            <p>Étudiant passionné en Informatique de Gestion à l'ENEAM, j'allie rigueur analytique et créativité débordante. Développeur web en devenir, je conçois des interfaces modernes, fluides et esthétiques, persuadé que la technologie doit toujours se mettre au service de l'expérience humaine et visuelle.</p>
+        </div>
+
+        <!-- Hommage au Professeur -->
+        <div class="hommage">
+            <div class="hommage-texte">
+                <img src="prof.png" alt="Docteur Matine Ousmane" class="prof-photo" style="float: right; margin-left: 2rem; margin-bottom: 1rem; width: 150px; height: 150px;" />
+                Ce site a été mis au point suite au cours de Web Design, dont les valeurs ont été transmises par le <strong>Docteur Matine Ousmane</strong>.<br /><br />
+                Il a su transmettre les bases essentielles de la création web à ses élèves, dont j'en fais partie. Tout le remerciement pour la qualité de son enseignement, de ses qualités sont bien fondées. Inspirant, il marque le début du parcours de nombreux développeurs.
+            </div>
+
+            <!-- Icônes des Réseaux Sociaux -->
+            <div class="social-title">Suivre le Docteur Matine Ousmane</div>
+            <div class="social-links">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/search/results/all/?keywords=Abdoul+Matine+Ousmane" target="_blank" class="social-link" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <!-- ResearchGate -->
+                <a href="https://www.researchgate.net/search.Search.html?query=Abdoul+Matine+Ousmane" target="_blank" class="social-link" title="ResearchGate">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.586 0c2.436 0 4.414 1.975 4.414 4.411v15.178c0 2.436-1.978 4.411-4.414 4.411h-15.172c-2.438 0-4.414-1.975-4.414-4.411v-15.178c0-2.436 1.976-4.411 4.414-4.411h15.172zm-7.669 16.924c0 .351-.013.719-.047 1.054-.035.341-.097.665-.183.978-.088.312-.204.604-.349.878h3.948v-2.91h-3.369zm1.066-5.879c-1.391 0-2.516 1.119-2.516 2.502s1.125 2.503 2.516 2.503 2.516-1.12 2.516-2.503-1.125-2.502-2.516-2.502zm-5.066-4.045h-4.321v11h2.247v-4.22h1.698l1.492 4.22h2.463l-1.859-4.834c.94-.383 1.62-1.282 1.62-2.36 0-1.423-1.157-2.576-2.588-2.576zm-2.074 4.793h-1.685v-2.825h1.685c.626 0 1.135.508 1.135 1.129 0 .622-.509 1.13-1.135 1.13l.002.566zm9.314-1.55c-1.791 0-3.243 1.442-3.243 3.224s1.452 3.224 3.243 3.224c1.603 0 2.936-1.152 3.197-2.671h-3.212v-1.12h4.37v2.128c-.803 1.583-2.457 2.684-4.355 2.684-2.738 0-4.96-2.208-4.96-4.93 0-2.723 2.222-4.931 4.96-4.931 1.77 0 3.327.948 4.195 2.378h-1.895c-.6-1.01-1.685-1.686-2.946-1.686l.646-1.3zm3.178-5.243h1.724v6.862h-1.724v-6.862zm-.862-2c.633 0 1.146.513 1.146 1.146 0 .633-.513 1.146-1.146 1.146s-1.146-.513-1.146-1.146c0-.633.513-1.146 1.146-1.146z"/></svg>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/search/top?q=Abdoul%20Matine%20Ousmane" target="_blank" class="social-link" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

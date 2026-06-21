@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Liste</title>
+    <style>
+        body { 
+            background: transparent; 
+            font-family: sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            color: #334155; 
+            animation: smoothScaleFade 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform-origin: center bottom;
+        }
+        @keyframes smoothScaleFade {
+            0%   { opacity: 0; transform: scale(0.9) translateY(40px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Listes à puces non ordonnées */
+        .cercle { list-style-type: circle; }
+        .carre { list-style-type: square; }
+        .rien { list-style-type: none; }
+
+        /* Listes ordonnées */
+        .commence_a_zero { list-style-type: decimal-leading-zero; }
+        .lettres_minuscules { list-style-type: lower-alpha; }
+        .chiffres_romains { list-style-type: upper-roman; }
+        .lettres_grecques { list-style-type: lower-greek; }
+
+        /* Quelques styles supplémentaires */
+        h2 {
+            text-indent: 20px;
+            font-family: Arial, Verdana, "Times New Roman", serif;
+            color: #2563eb;
+            margin-top: 2rem;
+        }
+        em { background-color: yellow; }
+        strong { color: red; }
+        
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .list-container {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="list-container">
+        <h2>Quelques listes non ordonnées</h2>
+        <p>Voici une liste à puce non ordonnée sans modification (= <em>disc</em>) :</p>
+        <ul>
+            <li>Liste</li>
+            <li>à</li>
+            <li>puces</li>
+        </ul>
+
+        <p>Avec <em>circle</em> :</p>
+        <ul class="cercle">
+            <li>Liste</li>
+            <li>à</li>
+            <li>puces</li>
+        </ul>
+
+        <p>Avec <em>square</em> :</p>
+        <ul class="carre">
+            <li>Liste</li>
+            <li>à</li>
+            <li>puces</li>
+        </ul>
+
+        <p>Avec <em>none</em> (sans puces) :</p>
+        <ul class="rien">
+            <li>Liste</li>
+            <li>à</li>
+            <li>puces</li>
+        </ul>
+
+        <h2>Quelques listes ordonnées</h2>
+        <p>Liste à puces ordonnée sans modification (= <em>decimal</em>)</p>
+        <ol>
+            <li>Un</li>
+            <li>Deux</li>
+            <li>Trois</li>
+            <li>Quatre</li>
+        </ol>
+
+        <p>Avec <em>decimal-leading-zero</em> :</p>
+        <ol class="commence_a_zero">
+            <li>Un</li>
+            <li>Deux</li>
+            <li>Trois</li>
+            <li>Quatre</li>
+        </ol>
+
+        <p>Avec <em>lower-alpha</em> :</p>
+        <ol class="lettres_minuscules">
+            <li>Un</li>
+            <li>Deux</li>
+            <li>Trois</li>
+            <li>Quatre</li>
+        </ol>
+
+        <p>Avec <em>upper-roman</em> :</p>
+        <ol class="chiffres_romains">
+            <li>Un</li>
+            <li>Deux</li>
+            <li>Trois</li>
+            <li>Quatre</li>
+        </ol>
+
+        <p>Avec <em>lower-greek</em> :</p>
+        <ol class="lettres_grecques">
+            <li>Un</li>
+            <li>Deux</li>
+            <li>Trois</li>
+            <li>Quatre</li>
+        </ol>
+    </div>
+</body>
+</html>
