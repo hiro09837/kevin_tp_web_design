@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mon Tableau de Bord - Kevin</title>
+    <title>TP Web Design Kevin</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <style>
         :root {
@@ -151,6 +151,51 @@
             font-size: 0.95rem;
             color: #475569;
             z-index: 10;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 900px) {
+            .header {
+                padding: 1rem;
+                height: auto;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .header-title {
+                font-size: 1.4rem;
+                width: 100%;
+                text-align: center;
+                order: 3;
+            }
+            .logo-img { height: 60px; }
+            
+            .main-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 0;
+                border-right: none;
+                border-bottom: 1px solid var(--glass-border);
+            }
+            .menu-title { display: none; }
+            .menu-nav {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+            .menu-item {
+                padding: 0.8rem 1.2rem;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                white-space: nowrap;
+            }
+            .menu-item::after { display: none; }
+            .menu-item:hover, .menu-item:focus {
+                padding-left: 1.2rem;
+                border-left-color: transparent;
+                border-bottom-color: var(--accent-color);
+            }
         }
     </style>
 </head>

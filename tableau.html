@@ -139,8 +139,29 @@
         }
         .cell-claude span {
             font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            color: #475569;
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 900px) {
+            body { padding: 1rem; }
+            .container { padding: 1.5rem 1rem; }
+            .title { font-size: 2rem; text-align: center; }
+            .subtitle { text-align: center; }
+            
+            /* Pour les tableaux responsives, on les fait scroller horizontalement */
+            .table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin-bottom: 2rem;
+                border-radius: 12px;
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+            }
+            
+            table {
+                min-width: 600px; /* Force le tableau à garder sa forme et scroller */
+            }
         }
 
         .cell-prog {
