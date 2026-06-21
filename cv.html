@@ -185,9 +185,13 @@
         }
 
         @media (max-width: 900px) {
-            .cv-container { flex-direction: column; }
+            body { padding: 1rem; }
+            .cv-container { flex-direction: column; overflow: visible; }
             .left-col, .right-col { width: 100%; }
-            .right-col { padding: 2rem; }
+            .left-col { padding: 2rem 1rem; }
+            .right-col { padding: 2rem 1rem; }
+            .name-header { text-align: center; }
+            .cv-photo { width: 150px; height: 150px; }
         }
     </style>
 </head>
